@@ -12,4 +12,3 @@ const multiply = function(a, b) {
 };
 
 module.exports = multiply;
-

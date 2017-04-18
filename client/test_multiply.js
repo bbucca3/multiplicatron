@@ -1,4 +1,4 @@
-const add = require('./multiply.js');
+const multiply = require('./multiply.js');
 
 class TestSuite {
 
