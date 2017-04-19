@@ -1,4 +1,4 @@
-const add = require('./multiply.js');
+const multiply = require('./multiply.js');
 
 class ViewManager {
 
@@ -24,7 +24,7 @@ class ViewManager {
 		num2 = parseInt(num2, 10);
 
 		// add numbers
-		const sum = add(num1, num2);
+		const sum = multiply(num1, num2);
 
 		// output
 		this.renderSum(sum);

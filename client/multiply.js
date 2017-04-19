@@ -11,4 +11,6 @@ const multiply = function(a, b) {
 	}
 };
 
+console.log(multiply([2, 3, 4]));
+
 module.exports = multiply;

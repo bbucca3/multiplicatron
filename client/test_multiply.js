@@ -35,7 +35,7 @@ class TestSuite {
 	}
 
 	testMultiplyThreeNegativeNumbers() {
-		return this.assertEquals(multiply(5, 7, -2), -70);		
+		return this.assertEquals(multiply(-5, -7, -2), -70);		
 	}
 }
 
