@@ -1,3 +1,4 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 const multiply = require('./multiply.js');
 
 class ViewManager {
@@ -46,3 +47,21 @@ class ViewManager {
 
 const viewManager = new ViewManager();
 viewManager.connectEventHandlers();
+},{"./multiply.js":2}],2:[function(require,module,exports){
+const multiply = function(a, b) {
+	if (arguments.length === 0) {
+		return NaN;
+	}
+	else {
+		var total = 1;
+		for (keys in arguments) {
+			total *= arguments[keys];
+		}
+		return total;
+	}
+};
+
+console.log(multiply([2, 3, 4]));
+
+module.exports = multiply;
+},{}]},{},[1]);
