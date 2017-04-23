@@ -36,7 +36,7 @@ class ViewManager {
 
 		var total;
 
-		var numbers = Array.from(document.getElementById('form-numbers').elements)
+		var numbers = Array.from(document.querySelectorAll('div.input-num'))
                    .filter(element => element.nodeName === 'INPUT')
                    .map(element => parseInt(element.value, 10))  
                    .filter(num => !Number.isNaN(num));
