@@ -25,6 +25,7 @@ class ViewManager {
 	  	addedFactor.type = 'text';
 	  	addedFactor.className = 'input-num';
 	  	addedFactor.autocomplete = 'off';
+	  	addedFactor.style = 'margin-top: 20px;'
 	  	div.appendChild(addedFactor);
 	  	addedFactors.appendChild(div);
 	}
@@ -39,10 +40,12 @@ class ViewManager {
                    .filter(element => element.nodeName === 'INPUT')
                    .map(element => parseInt(element.value, 10))  
                    .filter(num => !Number.isNaN(num));
+
 	    if (numbers.length >= 2) {
 	      total = multiply(numbers);
 	    }
-	    else if (total === undefined || numbers.length === 0) {
+
+	    else if (numbers.length === 0 || total === undefined) {
 	      total = NaN;
 	    }		
 
