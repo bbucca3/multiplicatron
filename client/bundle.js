@@ -36,14 +36,14 @@ class ViewManager {
 
 		var total;
 
-		let numbers = Array.from(document.getElementById('form-numbers').elements)
+		var numbers = Array.from(document.getElementById('form-numbers').elements)
                    .filter(element => element.nodeName === 'INPUT')
                    .map(element => parseInt(element.value, 10))  
                    .filter(num => !Number.isNaN(num));
 	    if (numbers.length >= 2) {
 	      total = multiply(numbers);
 	    }
-	    else if (total === undefined) {
+	    else if (total === undefined || numbers.length === 0) {
 	      total = NaN;
 	    }		
 
