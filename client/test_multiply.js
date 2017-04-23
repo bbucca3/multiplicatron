@@ -19,23 +19,23 @@ class TestSuite {
 	}
 
 	testMultiplyPositiveNumbers() {
-		return this.assertEquals(multiply(5, 7), 35);		
+		return this.assertEquals(multiply([5, 7]), 35);		
 	}
 
 	testMultiplyNegativeNumbers() {
-		return this.assertEquals(multiply(-2, -2), 4);		
+		return this.assertEquals(multiply([-2, -2]), 4);		
 	}
 
 	testMultiplyPositiveAndNegativeNumbers() {
-		return this.assertEquals(multiply(5, -7), -35);		
+		return this.assertEquals(multiply([5, -7]), -35);		
 	}
 
 	testMultiplyThreePositiveNumbers() {
-		return this.assertEquals(multiply(5, 7, 2), 70);		
+		return this.assertEquals(multiply([5, 7, 2]), 70);		
 	}
 
 	testMultiplyThreeNegativeNumbers() {
-		return this.assertEquals(multiply(-5, -7, -2), -70);		
+		return this.assertEquals(multiply([-5, -7, -2]), -70);		
 	}
 }
 

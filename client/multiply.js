@@ -1,16 +1,11 @@
-const multiply = function(a, b) {
-	if (arguments.length === 0) {
-		return NaN;
+const multiply = function(array) {
+	
+	var total = 1;
+	for (keys in array) {
+		total *= array[keys];
 	}
-	else {
-		var total = 1;
-		for (keys in arguments) {
-			total *= arguments[keys];
-		}
-		return total;
-	}
+	return total;
+	
 };
-
-console.log(multiply([2, 3, 4]));
 
 module.exports = multiply;

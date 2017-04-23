@@ -16,28 +16,39 @@ class ViewManager {
 				this.addFactor.bind(this));
 	}
 
-	addFactor(event){
+	addFactor(event) {
+
 		event.preventDefault();
+
+		var addedFactors = document.getElementById('added-factors');
+	  	var div = document.createElement('div')
+	  	var addedFactor = document.createElement('input');
+	  	addedFactor.type = 'text';
+	  	addedFactor.className = 'input-num';
+	  	addedFactor.autocomplete = 'off';
+	  	div.appendChild(addedFactor);
+	  	addedFactors.appendChild(div);
 	}
 
 	onSubmit(event){
 		// block form from submitting
-		// (which would refresh page)
 		event.preventDefault();
 
-		// grab number values as strings
-		let num1 = document.getElementById('input-num1').value;
-		let num2 = document.getElementById('input-num2').value;
+		var total;
 
-		// cast strings to ints
-		num1 = parseInt(num1, 10);
-		num2 = parseInt(num2, 10);
-
-		// add numbers
-		const sum = multiply(num1, num2);
+		let numbers = Array.from(document.getElementById('form-numbers').elements)
+                   .filter(element => element.nodeName === 'INPUT')
+                   .map(element => parseInt(element.value, 10))  
+                   .filter(num => !Number.isNaN(num));
+	    if (numbers.length >= 2) {
+	      total = multiply(numbers);
+	    }
+	    else if (total === undefined) {
+	      total = NaN;
+	    }		
 
 		// output
-		this.renderSum(sum);
+		this.renderSum(total);
 	}
 
 	renderSum(sum) {
@@ -48,20 +59,15 @@ class ViewManager {
 const viewManager = new ViewManager();
 viewManager.connectEventHandlers();
 },{"./multiply.js":2}],2:[function(require,module,exports){
-const multiply = function(a, b) {
-	if (arguments.length === 0) {
-		return NaN;
+const multiply = function(array) {
+	
+	var total = 1;
+	for (keys in array) {
+		total *= array[keys];
 	}
-	else {
-		var total = 1;
-		for (keys in arguments) {
-			total *= arguments[keys];
-		}
-		return total;
-	}
+	return total;
+	
 };
-
-console.log(multiply([2, 3, 4]));
 
 module.exports = multiply;
 },{}]},{},[1]);

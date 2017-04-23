@@ -23,13 +23,13 @@
 	font-weight: bold;
 }
 
-#add-factors {
+#add-factor {
 	width: 200px;
 	margin: 0 auto;
 	text-align: center;
 }
 
-#add-factors button {
+#add-factor button {
 	font-size: 36px;
 	margin-top: 50px;
 }
