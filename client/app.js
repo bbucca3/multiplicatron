@@ -36,10 +36,12 @@ class ViewManager {
 
 		var total;
 
-		var numbers = Array.from(document.querySelectorAll('div.input-num'))
-                   .filter(element => element.nodeName === 'INPUT')
+		var numbers = Array.from(document.getElementsByClassName('input-num'))
+                   .filter(input => input.className === 'input-num')
                    .map(element => parseInt(element.value, 10))  
                    .filter(num => !Number.isNaN(num));
+
+                   console.log(numbers);
 
 	    if (numbers.length >= 2) {
 	      total = multiply(numbers);
