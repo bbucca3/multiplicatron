@@ -26,7 +26,7 @@ class ViewManager {
 	  	addedFactor.type = 'text';
 	  	addedFactor.className = 'input-num';
 	  	addedFactor.autocomplete = 'off';
-	  	addedFactor.style = 'margin-top: 20px;';
+	  	addedFactor.style = 'margin-top: 50px;';
 	  	div.appendChild(addedFactor);
 	  	addedFactors.appendChild(div);
 	}
